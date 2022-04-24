@@ -8,6 +8,9 @@ all:  tsp
 tsp: tsp.o chromosome.o deme.o cities.o
 	$(CXX) $(LDFLAGS) -o $@ $^
 
+tourn: tourntsp.o tournament_deme.o chromosome.o deme.o cities.o
+	$(CXX) $(LDFLAGS) -o $@ $^
+
 test_chromosome: test_chromosome.o chromosome.o cities.o
 	$(CXX) $(LDFLAGS) -o $@ $^
 
@@ -16,6 +19,3 @@ test_chromosome: test_chromosome.o chromosome.o cities.o
 
 clean:
 	rm -rf *.o tsp
-	
-copy:
-	scp * patty:ga
