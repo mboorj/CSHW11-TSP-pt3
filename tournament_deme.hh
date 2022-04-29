@@ -13,4 +13,8 @@ class TournamentDeme : public Deme {
       // chromosomes against each other and choosing the better, and
       // return a pointer to that chromosome.
       virtual Chromosome* select_parent();
+
+      // Holds onto the exponent for the greatest power of 2 that is smaller
+      // than the pop_ size
+      unsigned pow2;
 };
